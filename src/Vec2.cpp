@@ -30,3 +30,49 @@ Vec2 Vec2::operator /(const float val) const
 {
     return Vec2(x / val, y / val);
 }
+
+Vec2 Vec2::operator *(const float val) const
+{
+    return Vec2(x * val, y * val);
+}
+
+void Vec2::operator +=(const Vec2 &rhs)
+{
+    x += rhs.x;
+    y += rhs.y;
+}
+
+void Vec2::operator -=(const Vec2 &rhs)
+{
+    x -= rhs.x;
+    y -= rhs.y;
+}
+
+void Vec2::operator *=(const float val)
+{
+    x *= val;
+    y *= val;
+}
+
+void Vec2::operator /=(const float val)
+{
+    x /= val;
+    y /= val;
+}
+
+float Vec2::distance(const Vec2 &rhs) const
+{
+    return sqrtf(powf(x, 2) + powf(y, 2));
+}
+
+float Vec2::angleTo(const Vec2 &rhs) const
+{
+    Vec2 delta(rhs.x - x, rhs.y - y);
+
+    return atan2f(delta.y, delta.x);
+}
+
+float Vec2::distanceFromOrigin() const
+{
+    return sqrtf(x * x + y * y);
+}

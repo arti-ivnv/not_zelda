@@ -27,6 +27,6 @@ class Vec2
     float distance(const Vec2 &rhs) const;
     float angleTo(const Vec2 &rhs) const;
     // Distance from the origine to the current point
-    float length() const;
-    Vec2  normilize();
+    float distanceFromOrigin() const;
+    // Vec2  normilizeAlg(const Vec2 &) const;
 };
